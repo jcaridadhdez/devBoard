@@ -28,6 +28,7 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:switches
 LIBS:PlacasPractica-cache
 EELAYER 25 0
 EELAYER END
@@ -114,12 +115,12 @@ $EndComp
 $Comp
 L CP C?
 U 1 1 59060D19
-P 2050 1600
-F 0 "C?" H 2075 1700 50  0000 L CNN
-F 1 "CP" H 2075 1500 50  0000 L CNN
-F 2 "" H 2088 1450 50  0001 C CNN
-F 3 "" H 2050 1600 50  0001 C CNN
-	1    2050 1600
+P 9800 4800
+F 0 "C?" H 9825 4900 50  0000 L CNN
+F 1 "CP" H 9825 4700 50  0000 L CNN
+F 2 "" H 9838 4650 50  0001 C CNN
+F 3 "" H 9800 4800 50  0001 C CNN
+	1    9800 4800
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -290,12 +291,12 @@ $EndComp
 $Comp
 L GND #PWR?
 U 1 1 59060D29
-P 2050 1400
-F 0 "#PWR?" H 2050 1150 50  0001 C CNN
-F 1 "GND" H 2050 1250 50  0000 C CNN
-F 2 "" H 2050 1400 50  0001 C CNN
-F 3 "" H 2050 1400 50  0001 C CNN
-	1    2050 1400
+P 9800 4600
+F 0 "#PWR?" H 9800 4350 50  0001 C CNN
+F 1 "GND" H 9800 4450 50  0000 C CNN
+F 2 "" H 9800 4600 50  0001 C CNN
+F 3 "" H 9800 4600 50  0001 C CNN
+	1    9800 4600
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -640,7 +641,7 @@ RI_AS
 Text Notes 8500 2450 0    60   ~ 0
 xBEE COM
 Wire Wire Line
-	2050 1400 2050 1450
+	9800 4600 9800 4650
 Wire Wire Line
 	2050 1750 2050 1800
 Wire Wire Line
@@ -1766,4 +1767,136 @@ Wire Wire Line
 Connection ~ 2500 5400
 Text Label 4400 3700 0    60   ~ 0
 OneWire
+$Comp
+L SW_Push SW?
+U 1 1 5AB3F66E
+P 7100 5850
+F 0 "SW?" H 7150 5950 50  0000 L CNN
+F 1 "SW_Push" H 7100 5790 50  0000 C CNN
+F 2 "" H 7100 6050 50  0001 C CNN
+F 3 "" H 7100 6050 50  0001 C CNN
+	1    7100 5850
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 5AB3FDE9
+P 7100 5350
+F 0 "R?" V 7180 5350 50  0000 C CNN
+F 1 "330" V 7100 5350 50  0000 C CNN
+F 2 "" V 7030 5350 50  0001 C CNN
+F 3 "" H 7100 5350 50  0001 C CNN
+	1    7100 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5AB3FE8C
+P 7450 4700
+F 0 "R?" V 7530 4700 50  0000 C CNN
+F 1 "10k" V 7450 4700 50  0000 C CNN
+F 2 "" V 7380 4700 50  0001 C CNN
+F 3 "" H 7450 4700 50  0001 C CNN
+	1    7450 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 5AB3FF4F
+P 7700 5350
+F 0 "C?" H 7725 5450 50  0000 L CNN
+F 1 "100nF" H 7725 5250 50  0000 L CNN
+F 2 "" H 7738 5200 50  0001 C CNN
+F 3 "" H 7700 5350 50  0001 C CNN
+	1    7700 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5AB40006
+P 7700 6100
+F 0 "#PWR?" H 7700 5850 50  0001 C CNN
+F 1 "GND" H 7700 5950 50  0000 C CNN
+F 2 "" H 7700 6100 50  0001 C CNN
+F 3 "" H 7700 6100 50  0001 C CNN
+	1    7700 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5AB40094
+P 8050 6100
+F 0 "#PWR?" H 8050 5850 50  0001 C CNN
+F 1 "GND" H 8050 5950 50  0000 C CNN
+F 2 "" H 8050 6100 50  0001 C CNN
+F 3 "" H 8050 6100 50  0001 C CNN
+	1    8050 6100
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7450 4850 7450 5200
+Wire Wire Line
+	7100 5200 8150 5200
+Connection ~ 7450 5200
+Wire Wire Line
+	7100 5500 7100 5650
+Wire Wire Line
+	7100 6050 7100 6100
+Wire Wire Line
+	7100 6100 8050 6100
+Connection ~ 7700 6100
+Wire Wire Line
+	7700 5500 7700 6100
+Text Label 7450 4550 1    60   ~ 0
+3V3
+Connection ~ 7700 5200
+Text Label 8150 5200 0    60   ~ 0
+RESETN
+Wire Notes Line
+	6700 4250 6700 6450
+Wire Notes Line
+	6700 6450 8650 6450
+Wire Notes Line
+	8650 6450 8650 4250
+Wire Notes Line
+	8650 4250 6700 4250
+Text Notes 7750 4550 0    60   ~ 0
+Reset_button\n
+Text Label 2050 1750 1    60   ~ 0
+Vddcore1
+Text Label 9550 5150 2    60   ~ 0
+Vddcore1
+Text Label 10100 5150 0    60   ~ 0
+Vddcore2
+$Comp
+L Jumper_NC_Dual JP?
+U 1 1 5AB4AF6E
+P 9800 5150
+F 0 "JP?" H 9850 5050 50  0000 L CNN
+F 1 "Jumper_NC_Dual" H 9800 5250 50  0000 C BNN
+F 2 "" H 9800 5150 50  0001 C CNN
+F 3 "" H 9800 5150 50  0001 C CNN
+	1    9800 5150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10100 5150 10050 5150
+Wire Wire Line
+	9800 4950 9800 5050
+Text Label 4400 4800 0    60   ~ 0
+Vddcore2
+Wire Notes Line
+	9000 4250 9000 5650
+Wire Notes Line
+	9000 5650 10650 5650
+Wire Notes Line
+	10650 5650 10650 4250
+Wire Notes Line
+	10650 4250 9000 4250
+Text Notes 10050 4500 0    60   ~ 0
+Vddcore
+Text Notes 10100 4950 0    60   ~ 0
+Para L21
+Text Notes 9150 5000 0    60   ~ 0
+Para D21\n
 $EndSCHEMATC

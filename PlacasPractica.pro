@@ -1,4 +1,4 @@
-update=22/03/2018 11:35:17
+update=22/03/2018 17:35:29
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,3 +59,4 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=C:/Users/JavierCaridad/Documents/Proyectos/KICAD-components/parts/ICs
+LibName31=switches
