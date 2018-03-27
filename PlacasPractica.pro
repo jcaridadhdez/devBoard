@@ -1,4 +1,4 @@
-update=26/03/2018 10:24:44
+update=27/03/2018 17:49:22
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,8 +23,6 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -60,3 +58,5 @@ LibName28=contrib
 LibName29=valves
 LibName30=switches
 LibName31=C:/Users/bisite/Documents/marcel_gitkraken/KICAD-components/parts/ICs
+[general]
+version=1
